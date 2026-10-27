@@ -1,0 +1,281 @@
+from django.db import migrations
+
+
+ADVICE = [
+    {
+        "code": "LIME_LOW_PH",
+        "service": "UDONGO",
+        "title_en": "Correct acidic soil",
+        "title_sw": "Rekebisha udongo wenye asidi",
+        "body_en": "If a soil test is below this crop's pH range, ask an officer for a lime rate. Mix lime into soil before planting.",
+        "body_sw": "Kipimo kikionyesha pH iko chini, muulize afisa kiasi cha chokaa. Changanya chokaa na udongo kabla ya kupanda.",
+        "cost_min_kes_per_acre": 2500,
+        "cost_max_kes_per_acre": 7000,
+        "effort": "MEDIUM",
+        "metadata": {"timing": "Before planting; use a soil test."},
+    },
+    {
+        "code": "COMPOST",
+        "service": "UDONGO",
+        "title_en": "Add mature compost",
+        "title_sw": "Weka mboji iliyooza vizuri",
+        "body_en": "Spread mature compost before planting. Keep it away from stems and mix it into the topsoil.",
+        "body_sw": "Tandaza mboji iliyooza vizuri kabla ya kupanda. Iweke mbali na mashina na uchanganye na udongo wa juu.",
+        "cost_min_kes_per_acre": 3000,
+        "cost_max_kes_per_acre": 9000,
+        "effort": "MEDIUM",
+        "metadata": {"timing": "Before planting."},
+    },
+    {
+        "code": "MANURE",
+        "service": "UDONGO",
+        "title_en": "Use well-rotted manure",
+        "title_sw": "Tumia samadi iliyooza vizuri",
+        "body_en": "Use only well-rotted manure. Mix it into the soil before planting; fresh manure can damage crops.",
+        "body_sw": "Tumia samadi iliyooza vizuri tu. Ichanganye na udongo kabla ya kupanda; samadi mbichi inaweza kuharibu mimea.",
+        "cost_min_kes_per_acre": 2500,
+        "cost_max_kes_per_acre": 8000,
+        "effort": "MEDIUM",
+        "metadata": {"timing": "Before planting."},
+    },
+    {
+        "code": "TOP_DRESS",
+        "service": "UDONGO",
+        "title_en": "Time fertiliser to crop growth",
+        "title_sw": "Weka mbolea kwa wakati wa ukuaji",
+        "body_en": "Use DAP at planting only when recommended. Apply CAN about 3 to 4 weeks after crop emergence. Use NPK only at the label rate or an officer's advice.",
+        "body_sw": "Tumia DAP wakati wa kupanda ikiwa imependekezwa. Weka CAN wiki 3 hadi 4 baada ya mimea kuota. Tumia NPK kwa kipimo cha lebo au ushauri wa afisa.",
+        "cost_min_kes_per_acre": 3500,
+        "cost_max_kes_per_acre": 12000,
+        "effort": "LOW",
+        "metadata": {"timing": "DAP at planting; CAN 3-4 weeks after emergence; NPK only as advised."},
+    },
+    {
+        "code": "CROP_ROTATION",
+        "service": "UDONGO",
+        "title_en": "Rotate crops",
+        "title_sw": "Badilisha mazao shambani",
+        "body_en": "Do not plant the same crop family in the same spot every season. Rotate to reduce pests and protect soil.",
+        "body_sw": "Usipande familia moja ya mazao sehemu ileile kila msimu. Badilisha mazao ili kupunguza wadudu na kulinda udongo.",
+        "cost_min_kes_per_acre": 0,
+        "cost_max_kes_per_acre": 1000,
+        "effort": "LOW",
+        "metadata": {"timing": "Plan before each season."},
+    },
+    {
+        "code": "LEGUMES",
+        "service": "UDONGO",
+        "title_en": "Include a legume",
+        "title_sw": "Panda kunde au jamii ya mikunde",
+        "body_en": "Rotate with beans, peas or another legume. Legumes help improve soil and add a useful harvest.",
+        "body_sw": "Badilisha mazao kwa maharagwe, njegere au mikunde mingine. Mikunde husaidia udongo na hutoa mavuno.",
+        "cost_min_kes_per_acre": 1500,
+        "cost_max_kes_per_acre": 5000,
+        "effort": "LOW",
+        "metadata": {"timing": "Choose a legume for the next suitable season."},
+    },
+    {
+        "code": "FERTILISER_WARNING",
+        "service": "UDONGO",
+        "title_en": "Avoid excess fertiliser",
+        "title_sw": "Epuka mbolea nyingi",
+        "body_en": "Never add extra fertiliser to guess a problem. Follow the soil test and product label to protect crops, water and your money.",
+        "body_sw": "Usiongeze mbolea kwa kubahatisha. Fuata kipimo cha udongo na maelekezo ya bidhaa ili kulinda mimea, maji na pesa.",
+        "cost_min_kes_per_acre": 0,
+        "cost_max_kes_per_acre": 0,
+        "effort": "LOW",
+        "metadata": {
+            "summary_by_language": {
+                "en": "Improve soil gradually. Use test-based inputs and protect the soil.",
+                "sw": "Boresha udongo polepole. Tumia vipimo na ulinde udongo.",
+                "guz": "",
+            }
+        },
+    },
+    {
+        "code": "NAPIER_VETIVER",
+        "service": "MTEREMKO",
+        "title_en": "Plant grass strips",
+        "title_sw": "Panda mistari ya nyasi",
+        "body_en": "Plant Napier or vetiver across the slope. Keep strips level and maintain them before heavy rains.",
+        "body_sw": "Panda Napier au vetiver kwa kuvuka mteremko. Tengeneza mistari iliyo sawa na uitunze kabla ya mvua kubwa.",
+        "cost_min_kes_per_acre": 1500,
+        "cost_max_kes_per_acre": 6000,
+        "effort": "MEDIUM",
+        "metadata": {
+            "seasonal_calendar": {
+                "Jan-Feb": {
+                    "en": "Repair strips and keep soil covered before the rains.",
+                    "sw": "Rekebisha mistari na funika udongo kabla ya mvua.",
+                    "guz": "",
+                },
+                "Mar-May": {
+                    "en": "Check strips after heavy rain and repair gaps.",
+                    "sw": "Kagua mistari baada ya mvua kubwa na uzibe mapengo.",
+                    "guz": "",
+                },
+                "Jun-Sep": {
+                    "en": "Cut grass carefully and keep the strip rooted.",
+                    "sw": "Kata nyasi kwa uangalifu na uache mizizi ishike udongo.",
+                    "guz": "",
+                },
+                "Oct-Dec": {
+                    "en": "Clear safe outlets and strengthen strips before short rains.",
+                    "sw": "Fungua njia salama za maji na imarisha mistari kabla ya mvua fupi.",
+                    "guz": "",
+                },
+            }
+        },
+    },
+    {
+        "code": "TRASH_LINES",
+        "service": "MTEREMKO",
+        "title_en": "Build trash lines",
+        "title_sw": "Tengeneza mistari ya mabaki ya mimea",
+        "body_en": "Lay crop residues across the slope in short, secure lines. Leave safe paths for excess water.",
+        "body_sw": "Weka mabaki ya mimea kwa mistari mifupi inayovuka mteremko. Acha njia salama za maji ya ziada.",
+        "cost_min_kes_per_acre": 0,
+        "cost_max_kes_per_acre": 1500,
+        "effort": "LOW",
+        "metadata": {},
+    },
+    {
+        "code": "CONTOUR_PLANTING",
+        "service": "MTEREMKO",
+        "title_en": "Plant along the contour",
+        "title_sw": "Panda kwa kufuata mistari ya kontua",
+        "body_en": "Plant across the slope, not up and down it. Ask an officer to help mark contour lines.",
+        "body_sw": "Panda kwa kuvuka mteremko, si kutoka juu kwenda chini. Muombe afisa akusaidie kuweka mistari ya kontua.",
+        "cost_min_kes_per_acre": 0,
+        "cost_max_kes_per_acre": 2000,
+        "effort": "LOW",
+        "metadata": {},
+    },
+    {
+        "code": "CUT_OFF_DRAINS",
+        "service": "MTEREMKO",
+        "title_en": "Make a safe cut-off drain",
+        "title_sw": "Tengeneza mfereji salama wa kugeuza maji",
+        "body_en": "Use a gently sloped cut-off drain to divert runoff to a stable grassed outlet. Never send water onto a neighbour's land.",
+        "body_sw": "Tumia mfereji wenye mteremko mdogo kuelekeza maji sehemu imara yenye nyasi. Usielekeze maji kwa jirani.",
+        "cost_min_kes_per_acre": 2000,
+        "cost_max_kes_per_acre": 8000,
+        "effort": "MEDIUM",
+        "metadata": {},
+    },
+    {
+        "code": "TERRACES",
+        "service": "MTEREMKO",
+        "title_en": "Build terraces with guidance",
+        "title_sw": "Jenga matuta kwa ushauri",
+        "body_en": "On a steep slope, ask an extension officer to design terraces. Poorly placed terraces can cause dangerous runoff.",
+        "body_sw": "Kwenye mteremko mkali, muombe afisa wa kilimo apange matuta. Matuta yasiyopangwa vizuri yanaweza kusababisha maji hatari.",
+        "cost_min_kes_per_acre": 15000,
+        "cost_max_kes_per_acre": 50000,
+        "effort": "HIGH",
+        "metadata": {},
+    },
+    {
+        "code": "MULCH_SLOPE",
+        "service": "MTEREMKO",
+        "title_en": "Cover bare soil",
+        "title_sw": "Funika udongo wazi",
+        "body_en": "Spread mulch on bare soil and secure it so rain cannot wash it away. Keep mulch clear of crop stems.",
+        "body_sw": "Tandaza matandazo kwenye udongo wazi na uyafunge yasichukuliwe na mvua. Yaweke mbali na mashina.",
+        "cost_min_kes_per_acre": 0,
+        "cost_max_kes_per_acre": 2500,
+        "effort": "LOW",
+        "metadata": {},
+    },
+    {
+        "code": "AGROFORESTRY",
+        "service": "MTEREMKO",
+        "title_en": "Add trees safely",
+        "title_sw": "Panda miti kwa mpangilio salama",
+        "body_en": "Plant suitable trees along boundaries or contour lines. Leave enough space for crops and water channels.",
+        "body_sw": "Panda miti inayofaa kwenye mipaka au mistari ya kontua. Acha nafasi ya mazao na njia za maji.",
+        "cost_min_kes_per_acre": 3000,
+        "cost_max_kes_per_acre": 12000,
+        "effort": "MEDIUM",
+        "metadata": {},
+    },
+    {
+        "code": "COMPOST_CROP_RESIDUE",
+        "service": "TAKA",
+        "title_en": "Compost crop residues",
+        "title_sw": "Tengeneza mboji kwa mabaki ya mimea",
+        "body_en": "Chop healthy crop residues. Layer them with animal manure and a little soil, keep the heap damp, and turn it until dark and crumbly.",
+        "body_sw": "Katakata mabaki salama ya mimea. Yachanganye kwa tabaka na samadi na udongo kidogo. Lowesha, geuza, kisha subiri yawe meusi na laini.",
+        "metadata": {"waste_type": "CROP_RESIDUE"},
+    },
+    {
+        "code": "COMPOST_PACKAGING",
+        "service": "TAKA",
+        "title_en": "Sort farm packaging",
+        "title_sw": "Panga vifungashio vya shambani",
+        "body_en": "Do not put plastic or chemical packaging in compost. Keep clean recyclable packaging separate and take it to an accepted collection point.",
+        "body_sw": "Usiweke plastiki au vifungashio vya kemikali kwenye mboji. Tenga vifungashio safi vinavyoweza kutumika tena na upeleke kituo kinachovipokea.",
+        "metadata": {"waste_type": "PACKAGING"},
+    },
+    {
+        "code": "PESTICIDE_TRIPLE_RINSE",
+        "service": "TAKA",
+        "title_en": "Triple-rinse pesticide containers",
+        "title_sw": "Suuza vyombo vya dawa mara tatu",
+        "body_en": "Wear PPE and follow the label. Rinse the empty container three times, pour each rinse into the spray tank, puncture the container, and take it to an approved collection point. Never reuse it.",
+        "body_sw": "Vaa vifaa vya kujikinga na fuata lebo. Suuza chombo tupu mara tatu na mimina maji ya kila suuza kwenye tanki la dawa. Toboa chombo na upeleke kituo kilichoidhinishwa. Usikitumie tena.",
+        "metadata": {"waste_type": "CHEMICAL_CONTAINER"},
+    },
+    {
+        "code": "NEVER_BURN_PLASTIC",
+        "service": "TAKA",
+        "title_en": "Keep plastic out of fires",
+        "title_sw": "Usichome plastiki",
+        "body_en": "Never burn plastic or pesticide packaging. Separate it and ask your ward about a safe collection point.",
+        "body_sw": "Usichome plastiki au vifungashio vya dawa. Vitenganishe na uulize kata kuhusu kituo salama cha kukusanya taka.",
+        "metadata": {"waste_type": "PACKAGING"},
+    },
+    {
+        "code": "PPE_CHECKLIST",
+        "service": "SPRAY",
+        "title_en": "Wear protective equipment",
+        "title_sw": "Vaa vifaa vya kujikinga",
+        "body_en": "Before spraying, wear a mask, gloves, boots, overalls and goggles. Check the product label for extra protection.",
+        "body_sw": "Kabla ya kunyunyiza, vaa barakoa, glavu, buti, ovaroli na miwani ya kinga. Angalia lebo kwa kinga zaidi.",
+        "metadata": {
+            "ppe_items": {
+                "mask": {"en": "Mask", "sw": "Barakoa", "guz": ""},
+                "gloves": {"en": "Gloves", "sw": "Glavu", "guz": ""},
+                "boots": {"en": "Boots", "sw": "Buti", "guz": ""},
+                "overall": {"en": "Overall", "sw": "Ovaroli", "guz": ""},
+                "goggles": {"en": "Goggles", "sw": "Miwani ya kinga", "guz": ""},
+            }
+        },
+    },
+    {
+        "code": "REENTRY_HARVEST",
+        "service": "SPRAY",
+        "title_en": "Wait before entering or harvesting",
+        "title_sw": "Subiri kabla ya kuingia au kuvuna",
+        "body_en": "Keep people and animals out until the re-entry time has passed. Do not harvest until the product's pre-harvest interval has passed.",
+        "body_sw": "Zuia watu na wanyama kuingia hadi muda wa kusubiri upite. Usivune hadi muda wa kusubiri kabla ya mavuno upite.",
+        "metadata": {},
+    },
+]
+
+
+def seed_advice(apps, schema_editor):
+    AdviceContent = apps.get_model("advice", "AdviceContent")
+    for data in ADVICE:
+        AdviceContent.objects.update_or_create(code=data["code"], defaults=data)
+
+
+def unseed_advice(apps, schema_editor):
+    AdviceContent = apps.get_model("advice", "AdviceContent")
+    AdviceContent.objects.filter(code__in=[item["code"] for item in ADVICE]).delete()
+
+
+class Migration(migrations.Migration):
+    dependencies = [("advice", "0002_advicecontent_ppesupplier")]
+
+    operations = [migrations.RunPython(seed_advice, unseed_advice)]

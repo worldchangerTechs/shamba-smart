@@ -1,0 +1,54 @@
+{
+  "appName": "Shamba",
+  "tagline": "Good things grow here.",
+  "welcome": "Good morning",
+  "farmer": "farmer",
+  "overview": "Your farm at a glance",
+  "home": "Home",
+  "farms": "My farms",
+  "alerts": "Alerts",
+  "market": "Market",
+  "learn": "Learn",
+  "weather": "Weather",
+  "today": "Today",
+  "activeAlerts": "Active alerts",
+  "yourFarms": "Your farms",
+  "landUnderCare": "Acres under care",
+  "thisWeek": "This week",
+  "viewAll": "View all",
+  "recentAlerts": "Recent alerts",
+  "marketWatch": "Market watch",
+  "latestMarketPrice": "Latest price",
+  "sampleMarketPrice": "Sample data · latest recorded price",
+  "viewMarket": "View market",
+  "whatNext": "What’s next?",
+  "quickActions": "Quick actions",
+  "addFarm": "Add a farm",
+  "checkWeather": "Check weather",
+  "learnSomething": "Learn something",
+  "noFarmsYet": "Your farms will appear here.",
+  "comingSoon": "Coming soon",
+  "sectionLoadingNote": "This part of Shamba is ready to grow. More features are on the way.",
+  "signIn": "Sign in",
+  "phone": "Phone number",
+  "password": "Password",
+  "signingIn": "Signing in…",
+  "signInError": "Could not sign in. Check your number and password.",
+  "logout": "Sign out",
+  "loginSubtitle": "Your growing season, made easier.",
+  "emptyAlerts": "You’re all caught up.",
+  "emptyAlertsHint": "New farm alerts will show up here.",
+  "retry": "Try again",
+  "loading": "Loading",
+  "language": "Language",
+  "reviewNotice": "",
+  "problem": "Farm topic"
+  ,"planner": "Mvua Planner"
+  ,"soilDoctor": "Udongo Doctor"
+  ,"spraySafe": "Spray Safe"
+  ,"erosionGuard": "Mteremko Guard"
+  ,"pestRadar": "Pest Radar"
+  ,"wasteLoop": "Taka Loop"
+  ,"more": "More"
+  ,"allTools": "All farm tools"
+}

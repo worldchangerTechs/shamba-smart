@@ -1,0 +1,23 @@
+{
+  "daily": [
+    {"rain_mm": 13, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 13, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 1, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 0, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 0, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 0, "temp_min": 4, "temp_max": 22, "humidity": 80},
+    {"rain_mm": 0, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 0, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 0, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 0, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 0, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 0, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 0, "temp_min": 15, "temp_max": 25, "humidity": 90},
+    {"rain_mm": 0, "temp_min": 15, "temp_max": 25, "humidity": 90}
+  ],
+  "hourly_rain_by_day": {
+    "0": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1],
+    "1": [1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "2": [1]
+  }
+}

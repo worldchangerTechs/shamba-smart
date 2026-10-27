@@ -1,0 +1,54 @@
+{
+  "appName": "Shamba",
+  "tagline": "Mambo mazuri hukua hapa.",
+  "welcome": "Habari za asubuhi",
+  "farmer": "mkulima",
+  "overview": "Muhtasari wa shamba lako",
+  "home": "Nyumbani",
+  "farms": "Mashamba yangu",
+  "alerts": "Tahadhari",
+  "market": "Soko",
+  "learn": "Jifunze",
+  "weather": "Hali ya hewa",
+  "today": "Leo",
+  "activeAlerts": "Tahadhari hai",
+  "yourFarms": "Mashamba yako",
+  "landUnderCare": "Ekari zinazolimwa",
+  "thisWeek": "Wiki hii",
+  "viewAll": "Tazama zote",
+  "recentAlerts": "Tahadhari za hivi karibuni",
+  "marketWatch": "Bei za soko",
+  "latestMarketPrice": "Bei ya hivi karibuni",
+  "sampleMarketPrice": "Data ya mfano · bei ya hivi karibuni",
+  "viewMarket": "Tazama soko",
+  "whatNext": "Hatua inayofuata?",
+  "quickActions": "Hatua za haraka",
+  "addFarm": "Ongeza shamba",
+  "checkWeather": "Angalia hali ya hewa",
+  "learnSomething": "Jifunze jambo",
+  "noFarmsYet": "Mashamba yako yataonekana hapa.",
+  "comingSoon": "Inakuja hivi karibuni",
+  "sectionLoadingNote": "Sehemu hii ya Shamba inakua. Vipengele zaidi vinakuja.",
+  "signIn": "Ingia",
+  "phone": "Nambari ya simu",
+  "password": "Nenosiri",
+  "signingIn": "Inaingia…",
+  "signInError": "Imeshindikana kuingia. Angalia nambari na nenosiri.",
+  "logout": "Toka",
+  "loginSubtitle": "Msimu wako wa kilimo, rahisi zaidi.",
+  "emptyAlerts": "Umeona kila kitu.",
+  "emptyAlertsHint": "Tahadhari mpya za shamba zitaonekana hapa.",
+  "retry": "Jaribu tena",
+  "loading": "Inapakia",
+  "language": "Lugha",
+  "reviewNotice": "",
+  "problem": "Mada ya shamba"
+  ,"planner": "Mpango wa Mvua"
+  ,"soilDoctor": "Daktari wa Udongo"
+  ,"spraySafe": "Usalama wa Dawa"
+  ,"erosionGuard": "Linda Mteremko"
+  ,"pestRadar": "Tahadhari za Wadudu"
+  ,"wasteLoop": "Taka Loop"
+  ,"more": "Zaidi"
+  ,"allTools": "Zana zote za shamba"
+}
